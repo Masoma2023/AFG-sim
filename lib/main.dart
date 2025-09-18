@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:afg_sim/routes/app_route.dart';
-import 'package:afg_sim/theme/app_theme.dart';
+import 'app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,10 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'AFG Sim',
       debugShowCheckedModeBanner: false,
-      title: "AFG Sim",
-      theme: AppTheme.lightTheme,
-      initialRoute: "/splash",
+      theme: ThemeData(
+        primarySwatch: Colors.indigo,
+        scaffoldBackgroundColor: const Color(0xFFFAFBFC),
+      ),
+      initialRoute: '/splash',
       onGenerateRoute: AppRouter.generateRoute,
     );
   }

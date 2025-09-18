@@ -12,47 +12,45 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Redirect after 3 seconds
-    Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, "/home");
+    // After 2.5s go to providers screen
+    Timer(const Duration(milliseconds: 2500), () {
+      Navigator.pushReplacementNamed(context, '/providers');
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal, // primary brand color
+      backgroundColor: const Color(0xFF233E8B), // brand-like color
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            // App Logo
+            // You can replace this with Image.asset('assets/logos/logo.png')
             Container(
               height: 120,
               width: 120,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(24),
               ),
-              child: const Icon(Icons.sim_card, size: 70, color: Colors.teal),
+              child: const Icon(
+                Icons.sim_card,
+                size: 72,
+                color: Color(0xFF233E8B),
+              ),
             ),
-
-            const SizedBox(height: 20),
-
-            // App Name
+            const SizedBox(height: 18),
             const Text(
-              "AFG Sim",
+              'AFG Sim',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 28,
+                fontSize: 26,
                 fontWeight: FontWeight.bold,
-                letterSpacing: 1.5,
+                letterSpacing: 1.2,
               ),
             ),
-
-            const SizedBox(height: 40),
-
-            // Loader
+            const SizedBox(height: 20),
             const CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
             ),
